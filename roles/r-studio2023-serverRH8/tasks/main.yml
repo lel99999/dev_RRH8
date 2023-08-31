@@ -45,7 +45,7 @@
 
 - name: Take server online
   command: "rstudio-server online"
-# when: update_rstudio
+  when: update_rstudio
   tags:
     - rstudio-server
 
