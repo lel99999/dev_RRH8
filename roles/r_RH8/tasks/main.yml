@@ -138,8 +138,8 @@
   
 - name: Install packages required by R packages
   vars:
-    r_dependencies_flag: true
-#   r_dependencies_flag: false
+#   r_dependencies_flag: true
+    r_dependencies_flag: false
   dnf:
     name: "{{ item }}"
 #   state: latest
