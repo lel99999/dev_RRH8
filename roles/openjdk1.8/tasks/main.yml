@@ -1,6 +1,6 @@
 ---
 - name: Install specified JDK version and dependencies
-  yum:
+  dnf:
     name: "{{ item }}"
     state: present
     disable_gpg_check: yes
@@ -33,6 +33,6 @@
     link: /usr/bin/java
 
 - name: Ensure nss package is the latest
-  yum:
+  dnf:
     name: nss
     state: latest
