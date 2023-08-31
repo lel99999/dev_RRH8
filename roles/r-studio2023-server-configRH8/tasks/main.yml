@@ -2,8 +2,8 @@
 - name: Install license
   command: rstudio-server license-manager activate {{ rstudio_server_key }}
   when: rstudio_server_key is defined
-  notify:
-    - restart rstudio-server
+#  notify:
+#    - restart rstudio-server
   tags:
     - rstudio-server
 
@@ -13,8 +13,8 @@
     dest: /etc/rstudio/ip-rules
   with_items: "{{ groups['proxy_server']|default(omit) }}"
 #  when: deploy_iptables and envir != "dev.local"
-  notify:
-    - restart rstudio-server
+#  notify:
+#    - restart rstudio-server
   tags:
     - rstudio-server
 
