@@ -3,7 +3,7 @@ jdk_packages:
   - java-1.8.0-openjdk
   - java-1.8.0-openjdk-devel
 # - rh-python38
-  - python3.8     # for libselinux-python
+#  - python3.8     # for libselinux-python
 # - libselinux-python
 
 java_deploy_options: []
