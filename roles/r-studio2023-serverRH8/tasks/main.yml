@@ -58,7 +58,7 @@
     - rstudio-server
 
 - name: pip install pexpect (driver dependency)
-  pip3:
+  pip:
     name: pexpect
     executable: /usr/bin/pip
   when: install_pro_drivers
