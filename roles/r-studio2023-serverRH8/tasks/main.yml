@@ -1,6 +1,6 @@
 ---
 - name: Install dependencies
-  yum:
+  dnf:
     name: rrdtool
     state: present
   tags:
@@ -21,12 +21,12 @@
     - rstudio-server
 
 - name: Remove R Studio Server
-  yum:
+  dnf:
     name: "{{ rstudio_server_old_package_name }}"
     state: absent
 
 - name: Install R Studio Server
-  yum:
+  dnf:
     name: "{{ rstudio_server_package_name }}"
 #   state: "{{ rstudio_server_package_state }}"
     state: present
@@ -50,7 +50,7 @@
     - rstudio-server
 
 - name: Install pip (driver dependency)
-  yum:
+  dnf:
     name: python-pip
     state: present
   when: install_pro_drivers
@@ -58,7 +58,7 @@
     - rstudio-server
 
 - name: pip install pexpect (driver dependency)
-  pip:
+  pip3:
     name: pexpect
     executable: /usr/bin/pip
   when: install_pro_drivers
