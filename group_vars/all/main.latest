@@ -960,7 +960,7 @@ python_dep_packages_mod:
   - libreport-devel
   - libreport-python
   - libselinux
-  - libselinux-python
+#  - libselinux-python
   - libsmbclient
   - libsmbclient-devel
   - libtalloc
