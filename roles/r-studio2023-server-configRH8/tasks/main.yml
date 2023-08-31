@@ -55,8 +55,8 @@
   template:
     src: rserver.conf.j2
     dest: /etc/rstudio/rserver.conf
-  notify:
-    - restart rstudio-server
+#  notify:
+#    - restart rstudio-server
   tags:
     - rstudio-server
 
@@ -64,8 +64,8 @@
   template:
     src: rsession.conf.j2
     dest: /etc/rstudio/rsession.conf
-  notify:
-    - restart rstudio-server
+#  notify:
+#    - restart rstudio-server
   tags:
     - rstudio-server
 
