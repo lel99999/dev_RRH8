@@ -27,7 +27,8 @@
 
 - name: Install R Studio Server
   dnf:
-    name: "{{ rstudio_server_package_name }}"
+    name: https://download2.rstudio.org/server/rhel8/x86_64/rstudio-server-rhel-2023.06.2-561-x86_64.rpm
+#    name: "{{ rstudio_server_package_name }}"
 #   state: "{{ rstudio_server_package_state }}"
     state: present
     update_cache: yes
