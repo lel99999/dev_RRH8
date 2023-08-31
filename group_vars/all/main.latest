@@ -270,7 +270,8 @@ java_deploy_options:
 jdk_packages:
 #  - jdk1.8.0_45
   - java-1.8.0-openjdk
-  - libselinux-python
+  - python3-libselinux
+#  - libselinux-python
 
 #jre_lib_path: /usr/java/jdk1.8.0_45/jre/lib
 #java_home_path: /usr/java/jdk1.8.0_45/jre
