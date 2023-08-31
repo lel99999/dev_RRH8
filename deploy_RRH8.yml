@@ -1,4 +1,4 @@
-- hosts: RRH7
+- hosts: RRH8
   #- hosts: wdcdev
   vars:
     envir: dev.local
@@ -12,16 +12,16 @@
     - debug:
 #       msg: "Variables: _uid = {{ _uid }}, _pwd = **********"
         msg: "Variables: _uid = {{ _uid }}, _pwd = {{ _pwd }}"
-    - name: register RHEL7.5
+    - name: register RHEL8.8
       command: "/usr/bin/subscription-manager register --username {{ _uid }} --password {{ _pwd }} --auto-attach --force"
 #     when: _uid != "" and _pwd != ""
 #     command: "/usr/bin/subscription-manager register --username <name> --password <password> --auto-attach"
-    - name: register RHEL7 repo
-      command: "/usr/bin/subscription-manager repos --enable=rhel-7-server-rpms --enable=rhel-7-server-extras-rpms --enable=rhel-7-server-optional-rpms"
-    - name: register RHEL7 RHSCL Repo
-      shell: "/usr/bin/subscription-manager repos --enable=rhel-server-rhscl-7-rpms"
-    - name: register RHEL7 DevTools
-      shell: "/usr/bin/subscription-manager repos --enable=rhel-7-server-devtools-rpms"
+    - name: register RHEL8 repo
+      command: /usr/bin/subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+#   - name: register RHEL7 RHSCL Repo
+#     shell: "/usr/bin/subscription-manager repos --enable=rhel-server-rhscl-7-rpms"
+#   - name: register RHEL7 DevTools
+#     shell: "/usr/bin/subscription-manager repos --enable=rhel-7-server-devtools-rpms"
     - name: list RHEL enabled repos
       shell: "/usr/bin/subscription-manager repos --list-enabled"
       register: enabled_repos
@@ -35,17 +35,18 @@
         state: present
 
   roles:
-    - epel7
+    - epel8
 #   - emacsRH7
     - openjdk1.8
 #   - odbc
 #   - postgresql-client
 #   - devtools
 
-    - devtools7
+    - gcc-toolset-12
+#   - devtools7
 #   - python2RH7
 #   - python3RH7
-    - r_RH7
+    - r_RH8
 
 # hosts: research_python
 # become: yes

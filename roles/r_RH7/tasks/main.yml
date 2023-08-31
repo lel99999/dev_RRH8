@@ -58,9 +58,9 @@
     disable_gpg_check: yes
   with_items:
 #   - R-devel
-    - blas64
-    - blas64-devel
-    - blas64-static
+#   - blas64
+#   - blas64-devel
+#   - blas64-static
 #   - blas
 #   - blas-devel
     - lapack64

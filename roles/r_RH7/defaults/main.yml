@@ -30,9 +30,12 @@ r_packages_github:
 #   user: rstudio
 
 r_env_vars:
-  CC: /opt/rh/devtoolset-7/root/usr/bin/gcc
-  CPP: /opt/rh/devtoolset-7/root/usr/bin/cpp
-  CXX: /opt/rh/devtoolset-7/root/usr/bin/c++
+  CC: /opt/rh/gcc-toolset-12/root/usr/bin/gcc
+  CPP: /opt/rh/gcc-toolset-12/root/usr/bin/cpp
+  CXX: /opt/rh/gcc-toolset-12/root/usr/bin/c++
+# CC: /opt/rh/devtoolset-7/root/usr/bin/gcc
+# CPP: /opt/rh/devtoolset-7/root/usr/bin/cpp
+# CXX: /opt/rh/devtoolset-7/root/usr/bin/c++
 # CC: /opt/rh/devtoolset-2/root/usr/bin/gcc
 # CPP: /opt/rh/devtoolset-2/root/usr/bin/cpp
 # CXX: /opt/rh/devtoolset-2/root/usr/bin/c++

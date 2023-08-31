@@ -2,7 +2,9 @@
 jdk_packages:
   - java-1.8.0-openjdk
   - java-1.8.0-openjdk-devel
-  - libselinux-python
+# - rh-python38
+  - python3.8     # for libselinux-python
+# - libselinux-python
 
 java_deploy_options: []
 jre_lib_path: /usr/lib/jvm/java-1.8.0/jre/lib
