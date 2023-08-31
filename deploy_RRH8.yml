@@ -35,7 +35,7 @@
         state: present
 
   roles:
-#   - epel8
+    - epel8
 #   - emacsRH7
     - openjdk1.8
 #   - odbc
