@@ -1,6 +1,6 @@
 ---
 - name: Install R Studio Desktop
-  yum:
+  dnf:
     name: https://download1.rstudio.org/electron/rhel8/x86_64/rstudio-2023.06.2-561-x86_64.rpm
 #   name: https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-2022.07.1-554-x86_64.rpm
 #   name: https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-2022.02.3-492-x86_64.rpm
