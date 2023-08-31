@@ -33,11 +33,17 @@
     - git
   tags:
     - gcc-toolset-12
+
+- stat: path=/opt/rh/devtoolset-2
+  register: links
+- debug: msg="link exists"
+  when: links.stat.exists
     
 - name: Set symlink to devtools-2 for compatibility
   become: yes
   become_method: sudo
   shell: ln -s /opt/rh/gcc-toolset-12 /opt/rh/devtoolset-2
+  when: not links.stat.exists
 
 #- name: Start using devtools
 #  become: yes
