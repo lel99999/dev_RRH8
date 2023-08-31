@@ -17,7 +17,7 @@
     - gcc-toolset-12
 
 - name: Install Updated Devtoolset 12
-  yum:
+  dnf:
     name: "{{ item }}"
     state: latest
   with_items:
