@@ -10,11 +10,18 @@ Vagrant.configure("2") do |config|
 #   trigger.info = "Trigger Execution ..."
 #   trigger.run = { path:"subscription-manager register --username <username> --password <password> --auto-attach"}
 # end
+# config.ssh.private_key_path = "~/.vagrant.d/insecure_private_key"
+#  config.ssh.username = "vagrant"
+#  config.ssh.password = "vagrant"
+  config.ssh.forward_agent = true
+  config.ssh.extra_args = ["-o", "PubkeyAcceptedKeyTypes=+ssh-rsa", "-o", "HostKeyAlgorithms=+ssh-rsa"]
+# config.ssh.password = "vagrant"
 
   config.vm.define "RRH8" do |rrh8|
 #   rrh7.vm.box = "clouddood/RH7.5_baserepo"
-    rrh8.vm.box = "clouddood/RH8.6_infra"
-    rrh8.vm.hostname = "RRH7"
+#   rrh8.vm.box = "clouddood/RH8.6_infra"
+    rrh8.vm.box = "clouddood/RHEL8.8_base"
+    rrh8.vm.hostname = "RRH8"
     rrh8.vm.network "private_network", ip: "192.168.60.148"
     rrh8.vm.provision "shell", :inline => "sudo echo '192.168.60.148 RRH8.local RRH8' >> /etc/hosts"
     rrh8.vm.provision "ansible" do |ansible|
