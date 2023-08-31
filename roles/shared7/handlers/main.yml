@@ -16,8 +16,8 @@
     name: rsyslog
     state: restarted
 
-- name: restart rstudio-server
-  command: systemctl restart rstudio-server
+#- name: restart rstudio-server
+#  command: systemctl restart rstudio-server
 # command: restart rstudio-server
 
 - name: restart elasticsearch
