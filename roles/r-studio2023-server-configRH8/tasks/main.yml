@@ -12,7 +12,7 @@
     src: ip-rules.j2
     dest: /etc/rstudio/ip-rules
   with_items: "{{ groups['proxy_server']|default(omit) }}"
-  when: deploy_iptables and envir != "dev.local"
+#  when: deploy_iptables and envir != "dev.local"
   notify:
     - restart rstudio-server
   tags:
