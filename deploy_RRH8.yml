@@ -1,4 +1,4 @@
-- hosts: All
+- hosts: all
   #- hosts: wdcdev
   vars:
     envir: dev.local
