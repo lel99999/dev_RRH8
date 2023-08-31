@@ -1,4 +1,4 @@
-- hosts: RRH8
+- hosts: All
   #- hosts: wdcdev
   vars:
     envir: dev.local
