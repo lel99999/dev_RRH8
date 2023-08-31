@@ -9,7 +9,7 @@
 - name: Install packages required by R packages
   vars:
     install_RDep: False
-  yum:
+  dnf:
     name: "{{ item }}"
 #    state: latest
     state: present
@@ -27,7 +27,7 @@
 
 # R is a meta package that ensures R-core, R-core-devel, R-java, libRMath, libRMath-devel
 - name: Install R-core
-  yum:
+  dnf:
     name: "{{ item }}"
     state: "{{ r_core_state }}"
     disable_gpg_check: yes
@@ -37,7 +37,7 @@
     - r
 
 - name: Check if rstudio server is installed
-  yum:
+  dnf:
     list: rstudio-server
   when: r_core_updated.changed
   register: rstudio_installed
@@ -53,7 +53,7 @@
     - r
 
 - name: Install base packages
-  yum:
+  dnf:
     name: "{{ item }}"
     state: "{{ r_core_state }}"
     disable_gpg_check: yes
@@ -140,7 +140,7 @@
   vars:
     r_dependencies_flag: true
 #   r_dependencies_flag: false
-  yum:
+  dnf:
     name: "{{ item }}"
 #   state: latest
     state: present
