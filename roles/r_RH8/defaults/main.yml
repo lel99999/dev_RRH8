@@ -1,0 +1,71 @@
+---
+install_r_updates: true
+install_r_packages: true
+
+r_core_state: present
+
+r_core:
+  - https://cdn.rstudio.com/r/centos-8/pkgs/R-3.6.3-1-1.x86_64.rpm
+  - https://cdn.rstudio.com/r/centos-8/pkgs/R-4.3.1-1-1.x86_64.rpm
+# - https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/r/R-4.3.1-1.el8.x86_64.rpm
+# - https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/r/R-core-4.3.1-1.el8.x86_64.rpm
+  - https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/r/R-core-devel-4.3.1-1.el8.x86_64.rpm
+  - https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/r/R-devel-4.3.1-1.el8.x86_64.rpm
+  - https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/r/R-java-4.3.1-1.el8.x86_64.rpm
+  - https://dl.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/r/R-java-devel-4.3.1-1.el8.x86_64.rpm
+
+r_dependencies:
+  - make
+  - gcc
+  - gcc-c++
+  - libcurl-devel
+  - libxml2-devel
+# - openssl-devel
+  - texlive-*
+  - texlive-collection-xetex
+# - QuantLib
+# - QuantLib-devel
+  - libcurl-devel
+  - libxml2-devel
+  - hunspell-devel
+  - udunits2
+  - udunits2-devel
+
+## required for R Crypto
+  - openssl-devel
+  - protobuf-devel
+  - jq-devel
+  - zeromq-devel
+
+r_packages:
+  - "gcc-toolset-12"
+# - "devtools7"
+#  - "http://cran.r-project.org/src/contrib/Archive/RQuantLib/RQuantLib_0.4.9.tar.gz"  
+# - "devtools"
+#  - "http://cran.r-project.org/src/contrib/Archive/RQuantLib/RQuantLib_0.3.12.tar.gz" # The latest version requires QuantLib 1.4.0, which is not supported by Centos 6.5
+
+r_packages_github:
+  - name: shinydashboard
+#   user: rstudio
+
+r_env_vars:
+  CC: /opt/rh/gcc-toolset-12/root/usr/bin/gcc
+  CPP: /opt/rh/gcc-toolset-12/root/usr/bin/cpp
+  CXX: /opt/rh/gcc-toolset-12/root/usr/bin/c++
+# CC: /opt/rh/devtoolset-7/root/usr/bin/gcc
+# CPP: /opt/rh/devtoolset-7/root/usr/bin/cpp
+# CXX: /opt/rh/devtoolset-7/root/usr/bin/c++
+# CC: /opt/rh/devtoolset-2/root/usr/bin/gcc
+# CPP: /opt/rh/devtoolset-2/root/usr/bin/cpp
+# CXX: /opt/rh/devtoolset-2/root/usr/bin/c++
+
+r_packages_with_opts:
+  - name: udunits2
+    include: /usr/include/udunits2
+    lib: /usr/lib64
+
+r_system_package_dir:
+  - /usr/lib64/R/library
+  - /usr/share/doc
+
+#restricted_group_name:
