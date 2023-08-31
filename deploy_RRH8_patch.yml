@@ -35,18 +35,18 @@
         state: present
 
   roles:
-    - epel8
+#   - epel8
 #   - emacsRH7
 #   - openjdk1.8
 #   - odbc
 #   - postgresql-client
 #   - devtools
 
-    - gcc-toolset-12
+#    - gcc-toolset-12
 #   - devtools7
 #   - python2RH7
 #   - python3RH7
-#    - r_RH8
+    - r_RH8
 #    - r-studio2023-serverRH8
 #    - r-studio2023-server-configRH8
 #    - r-studio2023-desktopRH8
