@@ -9,9 +9,9 @@
   become_method: sudo
 
   pre_tasks:
-    - debug:
+#    - debug:
 #       msg: "Variables: _uid = {{ _uid }}, _pwd = **********"
-        msg: "Variables: _uid = {{ _uid }}, _pwd = {{ _pwd }}"
+#        msg: "Variables: _uid = {{ _uid }}, _pwd = {{ _pwd }}"
 #    - name: register RHEL8.8
 #      command: "/usr/bin/subscription-manager register --username {{ _uid }} --password {{ _pwd }} --auto-attach --force"
 #     when: _uid != "" and _pwd != ""
