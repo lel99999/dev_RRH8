@@ -8,3 +8,5 @@ Workspace and Development for  R on RHEL8
 #### Patch / Fixes
 - Install python27 for yum
 - `$sudo dnf module install python27`
+- If rstudio-2023 is required to be installed with rstudio-server-2023
+- `$sudo rpm -Uvh https://download1.rstudio.org/electron/rhel8/x86_64/rstudio-2023.06.2-561-x86_64.rpm --force` <br/>
